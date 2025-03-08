@@ -9,6 +9,7 @@ namespace Presentacion
 {
     class MenuEstudiantes
     {
+        public EstudianteService estudianteService = new EstudianteService();
         public void Menu()
         {
             Console.Clear();
@@ -49,23 +50,25 @@ namespace Presentacion
         {
             do
             {
+                Estudiante estudiante = new Estudiante();
                 Console.WriteLine("Ingrese el id del estudiante:");
-                String idEstudiante = Console.ReadLine();
+                estudiante.Id = int.Parse(Console.ReadLine());
                 Console.WriteLine("Ingrese el nombre del estudiante:");
-                String nombreEstudiante = Console.ReadLine();
+                estudiante.Nombre = Console.ReadLine();
                 Console.WriteLine("Ingrese el apellido del estudiante:");
-                String apellidoEstudiante = Console.ReadLine();
+                estudiante.Apellido = Console.ReadLine();
                 Console.WriteLine("Ingrese la edad del estudiante:");
-                String edadEstudiante = Console.ReadLine();
+                estudiante.Edad = int.Parse(Console.ReadLine());
                 Console.WriteLine("Ingrese el sexo del estudiante:");
-                char sexoEstudiante = char.Parse(Console.ReadLine());
+                estudiante.Sexo = char.ToUpper(char.Parse(Console.ReadLine()));
                 Console.WriteLine("digite la nota del primer parcial:");
-                double primerParcial = double.Parse(Console.ReadLine());
+                estudiante.PrimerParcial = float.Parse(Console.ReadLine());
                 Console.WriteLine("digite la nota del segundo parcial:");
-                double segundoParcial = double.Parse(Console.ReadLine());
+                estudiante.SegundoParcial = float.Parse(Console.ReadLine());
                 Console.WriteLine("digite la nota del tercer parcial:");
-                double tercerParcial = double.Parse(Console.ReadLine());
-                //se manda los datos del estudiante a la logicaEstudiante para que se agregue
+                estudiante.TercerParcial = float.Parse(Console.ReadLine());
+                estudianteService.CalcularPromedio(estudiante);
+                estudianteService.Guardar(estudiante);
                 Console.WriteLine("Estudiante agregado correctamente");
                 Console.WriteLine("Desea agregar otro estudiante? (s/n)");
             } while (Console.ReadLine().ToUpper() == "S");
@@ -74,24 +77,25 @@ namespace Presentacion
         }
         public void ModificarEstudiante()
         {
+            Estudiante estudiante = new Estudiante();
             Console.WriteLine("Ingrese el id del estudiante que desea modificar:");
-            String idEstudiante = Console.ReadLine();
+            estudiante.Id = int.Parse(Console.ReadLine());
             Console.WriteLine("Ingrese el nuevo nombre del estudiante:");
-            String nombreEstudiante = Console.ReadLine();
+            estudiante.Nombre = Console.ReadLine();
             Console.WriteLine("Ingrese el nuevo apellido del estudiante:");
-            String apellidoEstudiante = Console.ReadLine();
+            estudiante.Apellido = Console.ReadLine();
             Console.WriteLine("Ingrese la nueva edad del estudiante:");
-            String edadEstudiante = Console.ReadLine();
+            estudiante.Edad = int.Parse(Console.ReadLine());
             Console.WriteLine("Ingrese el nuevo sexo del estudiante:");
-            char sexoEstudiante = char.Parse(Console.ReadLine());
+            estudiante.Sexo = char.ToUpper(char.Parse(Console.ReadLine()));
             Console.WriteLine("digite la nueva nota del primer parcial:");
-            double primerParcial = double.Parse(Console.ReadLine());
+            estudiante.PrimerParcial = float.Parse(Console.ReadLine());
             Console.WriteLine("digite la nueva nota del segundo parcial:");
-            double segundoParcial = double.Parse(Console.ReadLine());
+            estudiante.SegundoParcial = float.Parse(Console.ReadLine());
             Console.WriteLine("digite la nueva nota del tercer parcial:");
-            double tercerParcial = double.Parse(Console.ReadLine());
-            //se manda los datos del estudiante a la logicaEstudiante para que se modifique
-            Console.WriteLine("Estudiante modificado correctamente");
+            estudiante.TercerParcial = float.Parse(Console.ReadLine());
+            estudianteService.CalcularPromedio(estudiante);
+            estudianteService.Modificar(estudiante);
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }
@@ -99,14 +103,26 @@ namespace Presentacion
         {
             Console.WriteLine("Ingrese el id del estudiante que desea eliminar:");
             String idEstudiante = Console.ReadLine();
-            //se manda el id del estudiante a la logicaEstudiante para que se elimine
-            Console.WriteLine("Estudiante eliminado correctamente");
+            estudianteService.Eliminar(int.Parse(idEstudiante));
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }
         public void ListarEstudiantes()
         {
-            //se pide a la logicaEstudiante que devuelva la lista de estudiantes
+            List<Estudiante> estudiantes = estudianteService.ConsultarTodos();
+            foreach (var item in estudiantes)
+            {
+                Console.WriteLine($"Id: {item.Id}");
+                Console.WriteLine($"Nombre: {item.Nombre}");
+                Console.WriteLine($"Apellido: {item.Apellido}");
+                Console.WriteLine($"Edad: {item.Edad}");
+                Console.WriteLine($"Sexo: {item.Sexo}");
+                Console.WriteLine($"Primer Parcial: {item.PrimerParcial}");
+                Console.WriteLine($"Segundo Parcial: {item.SegundoParcial}");
+                Console.WriteLine($"Tercer Parcial: {item.TercerParcial}");
+                Console.WriteLine($"Promedio: {item.Promedio}");
+                Console.WriteLine("-------------------------------------------------");
+            }
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }
@@ -114,7 +130,19 @@ namespace Presentacion
         {
             Console.WriteLine("Ingrese el id del estudiante que desea buscar:");
             String idEstudiante = Console.ReadLine();
-            //se manda el id del estudiante a la logicaEstudiante para que se busque  y devuelva los datos
+            Estudiante estudiante = estudianteService.Buscar(int.Parse(idEstudiante));
+            if (estudiante != null)
+            {
+                Console.WriteLine($"Id: {estudiante.Id}");
+                Console.WriteLine($"Nombre: {estudiante.Nombre}");
+                Console.WriteLine($"Apellido: {estudiante.Apellido}");
+                Console.WriteLine($"Edad: {estudiante.Edad}");
+                Console.WriteLine($"Sexo: {estudiante.Sexo}");
+                Console.WriteLine($"Primer Parcial: {estudiante.PrimerParcial}");
+                Console.WriteLine($"Segundo Parcial: {estudiante.SegundoParcial}");
+                Console.WriteLine($"Tercer Parcial: {estudiante.TercerParcial}");
+                Console.WriteLine($"Promedio: {estudiante.Promedio}");
+            }
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }

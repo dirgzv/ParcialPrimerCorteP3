@@ -74,24 +74,22 @@ namespace DAL
         }
         public GrupoDeEstudiantes MapearGrupoDeEstudiantes(StreamReader reader)
         {
-            string Linea = reader.ReadLine();
-            string[] Datos = Linea.Split(';');
+            string Linea = string.Empty;
+            Linea = reader.ReadLine();
+            string[] DatosGrupo = Linea.Split(';');
             GrupoDeEstudiantes grupo = new GrupoDeEstudiantes();
-            grupo.Id = int.Parse(Datos[0]);
-            grupo.Nombre = Datos[1];
-            grupo.Estudiantes = new Estudiante[10];
-            int i = 0;
+            grupo.Id = int.Parse(DatosGrupo[0].Split(':')[1]);
+            grupo.Nombre = DatosGrupo[1].Split(':')[1];
             while ((Linea = reader.ReadLine()) != null)
             {
-                Datos = Linea.Split(';');
+                string[] DatosEstudiante = Linea.Split(';');
                 Estudiante estudiante = new Estudiante();
-                estudiante.Id = int.Parse(Datos[2]);
-                estudiante.Nombre = Datos[3];
-                estudiante.Edad = int.Parse(Datos[4]);
-                estudiante.Sexo = Datos[5][0];
-                estudiante.Promedio = float.Parse(Datos[6]);
-                grupo.Estudiantes[i] = estudiante;
-                i++;
+                estudiante.Id = int.Parse(DatosEstudiante[2]);
+                estudiante.Nombre = DatosEstudiante[3];
+                estudiante.Edad = int.Parse(DatosEstudiante[4]);
+                estudiante.Sexo = char.Parse(DatosEstudiante[5]);
+                estudiante.Promedio = float.Parse(DatosEstudiante[6]);
+                grupo.AgregarEstudiante(estudiante);
             }
             return grupo;
         }
@@ -126,6 +124,40 @@ namespace DAL
                     }
                 }
             }
+        }
+        public void AgregarEstudiante(GrupoDeEstudiantes grupoDeEstudiantes, Estudiante estudiante)
+        {
+                grupoDeEstudiantes.AgregarEstudiante(estudiante);
+        }
+        public GrupoDeEstudiantes ListarGrupo(int id) {
+            List<GrupoDeEstudiantes> gruposDeEstudiantes = ConsultarTodos();
+            foreach (var grupo in gruposDeEstudiantes)
+            {
+                if (EsEncontrado(grupo, id))
+                {
+                    return grupo;
+                }
+            }
+            return null;
+        }
+        public void EliminarEstudiante(GrupoDeEstudiantes grupoDeEstudiantes, Estudiante estudiante)
+        {
+            grupoDeEstudiantes.Estudiantes.Remove(estudiante);
+        }
+        public bool ExisteEnGrupo(GrupoDeEstudiantes grupoDeEstudiantes, Estudiante estudiante)
+        {
+            return grupoDeEstudiantes.Estudiantes.Contains(estudiante);
+        }
+        public bool ExisteGrupoEnGrupo(GrupoDeEstudiantes grupoDeEstudiantes, GrupoDeEstudiantes grupo)
+        {
+            foreach (var estudiante in grupo.Estudiantes)
+            {
+                if (!ExisteEnGrupo(grupoDeEstudiantes, estudiante))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

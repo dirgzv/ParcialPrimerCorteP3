@@ -19,7 +19,7 @@ namespace DAL
                 file.WriteLine($"{estudiante.Id};{estudiante.Nombre};{estudiante.Edad};{estudiante.Sexo};{estudiante.Promedio}");
             }
         }
-        public Persona Buscar(int id)
+        public Estudiante Buscar(int id)
         {
             List<Estudiante> estudiantes = ConsultarTodos();
             foreach (var item in estudiantes)

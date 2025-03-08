@@ -9,6 +9,7 @@ namespace Presentacion
 {
     class MenuGrupoDeEstudiantes
     {
+        public GrupoDeEstudianteService grupoDeEstudianteService = new GrupoDeEstudianteService();
         public void MostrarMenu()
         {
             Console.Clear();
@@ -46,30 +47,29 @@ namespace Presentacion
             }
         }
 
-        private void AgregarEstudiante(String idGrupo)
+        private GrupoDeEstudiantes AgregarEstudiante(GrupoDeEstudiantes grupoDeEstudiantes)
         {
             String respuesta = "s";
             do
             {
                 Console.WriteLine("Ingrese el id del estudiante que desea agregar al grupo:");
                 string idEstudiante = Console.ReadLine();
-                //se manda el id del grupo y del estudiante a la logicaGrupo
-                Console.WriteLine("Estudiante agregado correctamente");
+                Console.WriteLine(grupoDeEstudianteService.AgregarEstudiante(grupoDeEstudiantes, int.Parse(idEstudiante)));
                 Console.WriteLine("Desea agregar otro estudiante al grupo? (s/n)");
                 respuesta = Console.ReadLine();
             } while (respuesta.ToUpper() == "S");
-            Console.WriteLine("Presione una tecla para continuar");
-            Console.ReadKey();
+            return grupoDeEstudiantes;
         }
         public void CrearGrupo()
         {
+            GrupoDeEstudiantes grupoDeEstudiantes = new GrupoDeEstudiantes();
             Console.WriteLine("Crear grupo de estudiantes");
             Console.WriteLine("Ingrese el nombre del grupo:");
-            string nombreGrupo = Console.ReadLine();
+            grupoDeEstudiantes.Nombre = Console.ReadLine();
             Console.WriteLine("Ingrese el id del grupo:");
-            string idGrupo = Console.ReadLine();
-            AgregarEstudiante(idGrupo);
-            Console.WriteLine("Grupo creado correctamente");
+            grupoDeEstudiantes.Id = int.Parse(Console.ReadLine());
+            grupoDeEstudiantes = AgregarEstudiante(grupoDeEstudiantes);
+            Console.WriteLine(grupoDeEstudianteService.Guardar(grupoDeEstudiantes));
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }
@@ -78,21 +78,20 @@ namespace Presentacion
             Console.WriteLine("Modificar grupo de estudiantes");
             Console.WriteLine("Ingrese el id del grupo que desea modificar:");
             string idGrupo = Console.ReadLine();
-            //se manda el id del grupo a la logicagrupo
-
+            GrupoDeEstudiantes grupoDeEstudiantes = grupoDeEstudianteService.Buscar(int.Parse(idGrupo));
             Console.WriteLine("Ingrese el nuevo nombre del grupo:");
-            string nombreGrupoNuevo = Console.ReadLine();
-            Console.WriteLine("Ingrese el nuevo id del grupo:");
-            string idGrupoNuevo = Console.ReadLine();
-
+            grupoDeEstudiantes.Nombre = Console.ReadLine();
             Console.WriteLine("Desea modificar los integrantes del grupo? (s/n)");
             string respuesta = Console.ReadLine();
             if (respuesta.ToUpper() == "S")
             {
-                    AgregarEstudiante(idGrupo);
-                //se manda el nombre y el id del grupo y los id de los estudiantes a la logicaGrupo
+                if (grupoDeEstudiantes.Estudiantes.Count > 0)
+                {
+                    grupoDeEstudiantes.Estudiantes.Clear();
+                }
+                grupoDeEstudiantes = AgregarEstudiante(grupoDeEstudiantes);
+                Console.WriteLine(grupoDeEstudianteService.Modificar(grupoDeEstudiantes));
             }
-            Console.WriteLine("Grupo modificado correctamente");
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }
@@ -101,15 +100,16 @@ namespace Presentacion
             Console.WriteLine("Eliminar grupo de estudiantes");
             Console.WriteLine("Ingrese el id del grupo que desea eliminar:");
             string idGrupo = Console.ReadLine();
-            //se manda el id del grupo a la logicagrupo
-            Console.WriteLine("Grupo eliminado correctamente");
+            Console.WriteLine(grupoDeEstudianteService.Eliminar(int.Parse(idGrupo)));
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }
         public void ListarGrupo()
         {
             Console.WriteLine("Listar grupo de estudiantes");
-            //se manda a la logicaGrupo para que devuelva los grupos
+            Console.WriteLine("Ingrese el id del grupo que desea listar:");
+            string idGrupo = Console.ReadLine();
+            grupoDeEstudianteService.ListarGrupo(int.Parse(idGrupo));
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }
@@ -118,6 +118,7 @@ namespace Presentacion
             Console.WriteLine("Operaciones Grupo");
             Console.WriteLine("Ingrese el id del grupo con el que se desea realizar las operaciones:");
             string idGrupo = Console.ReadLine();
+            GrupoDeEstudiantes grupoDeEstudiantes= grupoDeEstudianteService.Buscar(int.Parse(idGrupo));
             Console.WriteLine("1. Agregar estudiante");
             Console.WriteLine("2. Eliminar estudiante");
             Console.WriteLine("3. verificacion de existencia de estudiante en un grupo");
@@ -131,22 +132,22 @@ namespace Presentacion
             switch (opcion)
             {
                 case "1":
-                    AgregarEstudiante(idGrupo);
+                    AgregarEstudiante(grupoDeEstudiantes);
                     break;
                 case "2":
-                    eliminarEstudiante(idGrupo);
+                    eliminarEstudiante(grupoDeEstudiantes);
                     break;
                 case "3":
-                    EstudianteExisteEnGrupo(idGrupo);
+                    EstudianteExisteEnGrupo(grupoDeEstudiantes);
                     break;
                 case "4":
-                    GrupoExisteEnGrupo(idGrupo);
+                    GrupoExisteEnGrupo(grupoDeEstudiantes);
                     break;
                 case "5":
-                    EstudiantesComunesEngrupos(idGrupo);
+                    EstudiantesComunesEngrupos(grupoDeEstudiantes);
                     break;
                 case "6":
-                    EstudiantesNoComunesEngrupos(idGrupo);
+                    EstudiantesNoComunesEngrupos(grupoDeEstudiantes);
                     break;
                 case "7":
                     Console.WriteLine("Volver al menú anterior");
@@ -156,37 +157,45 @@ namespace Presentacion
                     break;
             }
         }
-        public void eliminarEstudiante(String idGrupo)
+        public void eliminarEstudiante(GrupoDeEstudiantes grupoDeEstudiantes)
         {
             do
             {
                 Console.WriteLine("Ingrese el id del estudiante que desea eliminar del grupo:");
                 string idEstudiante = Console.ReadLine();
-                //se manda el id grupo y el id del estudiante a la logicaGRupo para que lo elimine del grupo
-                Console.WriteLine("Estudiante eliminado correctamente");
+                Console.WriteLine(grupoDeEstudianteService.EliminarEstudiante(grupoDeEstudiantes, int.Parse(idEstudiante)));
                 Console.WriteLine("Desea eliminar otro estudiante del grupo? (s/n)");
             } while (Console.ReadLine().ToUpper() == "S");
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }
-        public void EstudianteExisteEnGrupo(String idGrupo)
+        public void EstudianteExisteEnGrupo(GrupoDeEstudiantes grupoDeEstudiantes)
         {
             Console.WriteLine("Ingrese el id del estudiante que desea verificar si está en el grupo:");
             string idEstudianteVerificar = Console.ReadLine();
-            //se manda el id del estudiante a la logicaGrupo para que devuelva si existe o no
+            Console.WriteLine(grupoDeEstudianteService.ExisteEnGrupo(grupoDeEstudiantes, int.Parse(idEstudianteVerificar)));
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }
-        public void GrupoExisteEnGrupo(String idGrupo)
+        public void GrupoExisteEnGrupo(GrupoDeEstudiantes grupoDeEstudiantes)
         {
             Console.WriteLine("Ingrese el id del grupo que desea verificar si está en el grupo:");
             string idGrupoVerificar = Console.ReadLine();
-            //se manda el id del grupo  y del grupo que se desea verificaar a la logicaGrupo para que devuelva si existe o no
+            GrupoDeEstudiantes grupoDeEstudiantesVerificar = grupoDeEstudianteService.Buscar(int.Parse(idGrupoVerificar));
+            if (grupoDeEstudiantesVerificar == null)
+            {
+                Console.WriteLine("El grupo que desea buscar en otro grupo no existe");
+            }
+            else
+            {
+                Console.WriteLine(grupoDeEstudianteService.ExisteEnGrupo(grupoDeEstudiantes, grupoDeEstudiantesVerificar));
+            }
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }
-        public void EstudiantesComunesEngrupos(String idGrupo)
+        public void EstudiantesComunesEngrupos(GrupoDeEstudiantes grupoDeEstudiantes)
         {
+            //por aqui vamos
             Console.WriteLine("Ingrese el id del segundo grupo:");
             string idGrupo2 = Console.ReadLine();
             //se manda los id de los grupos a la logicaGrupo para que devuelva los estudiantes comunes

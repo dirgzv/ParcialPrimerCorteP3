@@ -54,8 +54,12 @@ namespace BLL
             {
                 throw new ArgumentException("El Id debe ser mayor que cero.", nameof(id));
             }
-
-            return grupoDeEstudianteRepository.Buscar(id);
+            GrupoDeEstudiantes grupoDeEstudiantes = grupoDeEstudianteRepository.Buscar(id);
+            if (grupoDeEstudiantes == null)
+            {
+                throw new InvalidOperationException($"No se encontró un estudiante con el Id {id}.");
+            }
+                return grupoDeEstudiantes;
         }
         public bool EsEncontrado(GrupoDeEstudiantes grupoDeEstudiantes, int id)
         {
@@ -102,6 +106,102 @@ namespace BLL
             {
                 return $"Error de la Aplicación: {e.Message}";
             }
+        }
+        public String AgregarEstudiante(GrupoDeEstudiantes grupoDeEstudiantes, int id)
+        {
+            if (grupoDeEstudiantes == null)
+            {
+                throw new ArgumentNullException(nameof(grupoDeEstudiantes), "El grupo de estudiantes no puede ser nulo.");
+            }
+
+            if (id <= 0)
+            {
+                throw new ArgumentException("El ID debe ser mayor que cero.", nameof(id));
+            }
+            EstudianteRepository estudianteRepository = new EstudianteRepository();
+            Estudiante estudiante = estudianteRepository.Buscar(id);
+
+            if (estudiante == null)
+            {
+                throw new InvalidOperationException($"No se encontró un estudiante con el ID {id}.");
+            }
+            grupoDeEstudianteRepository.AgregarEstudiante(grupoDeEstudiantes, estudiante);
+            return ($"El estudiante con la identificación {grupoDeEstudiantes.Id} se encuentra agregado");
+
+        }
+        public void ListarGrupo(int id)
+        {
+            if (id <= 0)
+            {
+                throw new ArgumentException("El ID debe ser mayor que cero.", nameof(id));
+            }
+            GrupoDeEstudiantes grupoDeEstudiantes = grupoDeEstudianteRepository.Buscar(id);
+            if (grupoDeEstudiantes == null)
+            {
+                throw new InvalidOperationException($"No se encontró un grupo de estudiantes con el ID {id}.");
+            }
+            Console.WriteLine($"Grupo ID: {grupoDeEstudiantes.Id}; Nombre del grupo: {grupoDeEstudiantes.Nombre}");
+            foreach (var estudiante in grupoDeEstudiantes.Estudiantes)
+            {
+                Console.WriteLine($"{grupoDeEstudiantes.Id};{grupoDeEstudiantes.Nombre};{estudiante.Id};{estudiante.Nombre};{estudiante.Edad};{estudiante.Sexo};{estudiante.Promedio}");
+            }
+        }
+        public String EliminarEstudiante(GrupoDeEstudiantes grupoDeEstudiantes,int id)
+        {
+            if (grupoDeEstudiantes == null)
+            {
+                throw new ArgumentNullException(nameof(grupoDeEstudiantes), "El grupo de estudiantes no puede ser nulo.");
+            }
+            if (id <= 0)
+            {
+                throw new ArgumentException("El ID debe ser mayor que cero.", nameof(id));
+            }
+            EstudianteRepository estudianteRepository = new EstudianteRepository();
+            Estudiante estudiante = estudianteRepository.Buscar(id);
+            if (estudiante == null)
+            {
+                throw new InvalidOperationException($"No se encontró un estudiante con el ID {id}.");
+            }
+            grupoDeEstudianteRepository.EliminarEstudiante(grupoDeEstudiantes, estudiante);
+            return ($"El estudiante con la identificación {grupoDeEstudiantes.Id} se encuentra eliminado");
+        }
+        public String ExisteEnGrupo(GrupoDeEstudiantes grupoDeEstudiantes,int id)
+        {
+            if (grupoDeEstudiantes == null)
+            {
+                throw new ArgumentNullException(nameof(grupoDeEstudiantes), "El grupo de estudiantes no puede ser nulo.");
+            }
+            if (id <= 0)
+            {
+                throw new ArgumentException("El ID debe ser mayor que cero.", nameof(id));
+            }
+            EstudianteRepository estudianteRepository = new EstudianteRepository();
+            Estudiante estudiante = estudianteRepository.Buscar(id);
+            if (estudiante == null)
+            {
+                throw new ArgumentNullException(nameof(estudiante), "El estudiante no puede ser nulo.");
+            }
+            if (grupoDeEstudianteRepository.ExisteEnGrupo(grupoDeEstudiantes, estudiante))
+            {
+                return ($"El estudiante con la identificación {grupoDeEstudiantes.Id} se encuentra en el grupo");
+            }
+            return ($"El estudiante con la identificación {grupoDeEstudiantes.Id} no se encuentra en el grupo");
+        }
+        public String ExisteEnGrupo(GrupoDeEstudiantes grupoDeEstudiantes, GrupoDeEstudiantes grupoDeEstudiantesVerificar)
+        {
+            if (grupoDeEstudiantes == null)
+            {
+                throw new ArgumentNullException(nameof(grupoDeEstudiantes), "El grupo de estudiantes no puede ser nulo.");
+            }
+            if (grupoDeEstudiantesVerificar == null)
+            {
+                throw new ArgumentNullException(nameof(grupoDeEstudiantesVerificar), "El grupo de estudiantes a verificar no puede ser nulo.");
+            }
+            if (grupoDeEstudianteRepository.ExisteEnGrupo(grupoDeEstudiantes, grupoDeEstudiantesVerificar))
+            {
+                return ($"El grupo con la identificación {grupoDeEstudiantes.Id} se encuentra en el grupo");
+            }
+            return ($"El grupo con la identificación {grupoDeEstudiantes.Id} no se encuentra en el grupo");
         }
     }
 }

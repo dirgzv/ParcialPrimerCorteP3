@@ -24,5 +24,10 @@ namespace Entity
             TercerParcial = tercerParcial;
             Promedio = (PrimerParcial + SegundoParcial + TercerParcial) / 3;
         }
+
+        public void CalcularPromedio()
+        {
+            Promedio = (PrimerParcial + SegundoParcial + TercerParcial) / 3;
+        }
     }
 }

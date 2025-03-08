@@ -28,7 +28,7 @@ namespace BLL
             }
             catch (Exception e)
             {
-                return $"Error de la Aplicación: {e.Message}";
+                return $"Error de la Aplicación al intentar guardar el estudiante: {e.Message}";
             }
         }
         public string Eliminar(int id)
@@ -44,7 +44,7 @@ namespace BLL
             }
             catch (Exception e)
             {
-                return $"Error de la Aplicación: {e.Message}";
+                return $"Error de la Aplicación al intentar eliminar al estudiante: {e.Message}";
             }
         }
         public Estudiante Buscar(int id)
@@ -53,8 +53,42 @@ namespace BLL
             {
                 throw new ArgumentException("El Id debe ser mayor que cero.", nameof(id));
             }
-            return estudianteRepository.Buscar(id);
+            var estudiante = estudianteRepository.Buscar(id);
+            if (estudiante == null)
+            {
+                throw new InvalidOperationException($"No se encontró un estudiante con el Id {id}.");
+            }
+            return estudiante;
         }
-        public bool
+
+        public Estudiante CalcularPromedio(Estudiante estudiante)
+        {
+            if (estudiante == null)
+            {
+                throw new ArgumentNullException(nameof(estudiante), "Error al calcular promedio,El objeto estudiante no puede ser nulo.");
+            }
+            estudiante.CalcularPromedio(); 
+            return estudiante; 
+        }
+        public String Modificar(Estudiante estudiante)
+        {
+            try
+            {
+                if (estudianteRepository.Buscar(estudiante.Id) != null)
+                {
+                    estudianteRepository.Modificar(estudiante);
+                    return ($"El estudiante con la identificación {estudiante.Id} ha sido modificado satisfactoriamente");
+                }
+                return ($"El estudiante con la identificación {estudiante.Id} no se encuentra registrado");
+            }
+            catch (Exception e)
+            {
+                return $"Error de la Aplicación al intentar modificar el estudiante: {e.Message}";
+            }
+        }
+        public List<Estudiante> ConsultarTodos()
+        {
+            return estudianteRepository.ConsultarTodos();
+        }
     }
 }

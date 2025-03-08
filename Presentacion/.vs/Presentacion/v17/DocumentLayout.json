@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\santiago\\source\\repos\\dirgzv\\ParcialPrimerCorteP3\\Presentacion\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{849B4542-995B-4730-A0A9-39179E832418}|..\\DAL\\DAL.csproj|c:\\users\\santiago\\source\\repos\\dirgzv\\parcialprimercortep3\\dal\\estudianterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53B46EDF-4EC0-45CB-94BB-7267EC430D4C}|..\\BLL\\BLL.csproj|c:\\users\\santiago\\source\\repos\\dirgzv\\parcialprimercortep3\\bll\\estudianteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{534FA500-F151-4CE4-BCB6-01A455094755}|..\\Entity\\Entity.csproj|c:\\users\\santiago\\source\\repos\\dirgzv\\parcialprimercortep3\\entity\\estudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{534FA500-F151-4CE4-BCB6-01A455094755}|..\\Entity\\Entity.csproj|c:\\users\\santiago\\source\\repos\\dirgzv\\parcialprimercortep3\\entity\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,56 +20,8 @@
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Persona.cs",
-              "DocumentMoniker": "C:\\Users\\santiago\\source\\repos\\dirgzv\\ParcialPrimerCorteP3\\Entity\\Persona.cs",
-              "RelativeDocumentMoniker": "..\\Entity\\Persona.cs",
-              "ToolTip": "C:\\Users\\santiago\\source\\repos\\dirgzv\\ParcialPrimerCorteP3\\Entity\\Persona.cs",
-              "RelativeToolTip": "..\\Entity\\Persona.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T16:51:07.202Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Estudiante.cs",
-              "DocumentMoniker": "C:\\Users\\santiago\\source\\repos\\dirgzv\\ParcialPrimerCorteP3\\Entity\\Estudiante.cs",
-              "RelativeDocumentMoniker": "..\\Entity\\Estudiante.cs",
-              "ToolTip": "C:\\Users\\santiago\\source\\repos\\dirgzv\\ParcialPrimerCorteP3\\Entity\\Estudiante.cs",
-              "RelativeToolTip": "..\\Entity\\Estudiante.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T16:40:53.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EstudianteRepository.cs",
-              "DocumentMoniker": "C:\\Users\\santiago\\source\\repos\\dirgzv\\ParcialPrimerCorteP3\\DAL\\EstudianteRepository.cs",
-              "RelativeDocumentMoniker": "..\\DAL\\EstudianteRepository.cs",
-              "ToolTip": "C:\\Users\\santiago\\source\\repos\\dirgzv\\ParcialPrimerCorteP3\\DAL\\EstudianteRepository.cs",
-              "RelativeToolTip": "..\\DAL\\EstudianteRepository.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAmwEQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T16:40:50.322Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EstudianteService.cs",
-              "DocumentMoniker": "C:\\Users\\santiago\\source\\repos\\dirgzv\\ParcialPrimerCorteP3\\BLL\\EstudianteService.cs",
-              "RelativeDocumentMoniker": "..\\BLL\\EstudianteService.cs",
-              "ToolTip": "C:\\Users\\santiago\\source\\repos\\dirgzv\\ParcialPrimerCorteP3\\BLL\\EstudianteService.cs",
-              "RelativeToolTip": "..\\BLL\\EstudianteService.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAowCQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T16:40:47.541Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }
