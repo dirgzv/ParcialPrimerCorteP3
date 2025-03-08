@@ -8,7 +8,7 @@ using System.IO;
 
 namespace DAL
 {
-    class GrupoDeEstudiantesRepository
+    public class GrupoDeEstudiantesRepository
     {
         private readonly String FileName = "GrupoDeEstudiantes.txt";
         public GrupoDeEstudiantesRepository() { }

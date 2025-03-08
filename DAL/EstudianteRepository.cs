@@ -19,7 +19,7 @@ namespace DAL
                 file.WriteLine($"{estudiante.Id};{estudiante.Nombre};{estudiante.Edad};{estudiante.Sexo};{estudiante.Promedio}");
             }
         }
-        public Persona Buscar(string id)
+        public Persona Buscar(int id)
         {
             List<Estudiante> estudiantes = ConsultarTodos();
             foreach (var item in estudiantes)
@@ -31,7 +31,7 @@ namespace DAL
             }
             return null;
         }
-        public bool EsEncontrado(Estudiante estudiante, string id)
+        public bool EsEncontrado(Estudiante estudiante, int id)
         {
             return estudiante.Id.Equals(id);
         }
@@ -60,7 +60,7 @@ namespace DAL
             estudiante.Promedio = float.Parse(Datos[4]);
             return estudiante;
         }
-        public void Eliminar(string id)
+        public void Eliminar(int id)
         {
             List<Estudiante> estudiantes = ConsultarTodos();
             using (var Writer = new StreamWriter(FileName))
@@ -81,7 +81,7 @@ namespace DAL
             {
                 foreach (var item in estudiantes)
                 {
-                    if (EsEncontrado(item, estudianteNuevo.Id.ToString()))
+                    if (EsEncontrado(item, estudianteNuevo.Id))
                     {
                         Writer.WriteLine($"{estudianteNuevo.Id};{estudianteNuevo.Nombre};{estudianteNuevo.Edad};{estudianteNuevo.Sexo};{estudianteNuevo.Promedio}");
                     }
