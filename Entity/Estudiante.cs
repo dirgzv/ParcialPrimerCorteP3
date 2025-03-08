@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    class Estudiante : Persona
+     public class Estudiante : Persona
     {
         public float PrimerParcial { get; set; }
         public float SegundoParcial { get; set; }

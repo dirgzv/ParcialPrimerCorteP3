@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35818.85 d17.13
+VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion.csproj", "{2BE7BFB5-2B07-4268-A17D-8EA42590DA46}"
+	ProjectSection(ProjectDependencies) = postProject
+		{849B4542-995B-4730-A0A9-39179E832418} = {849B4542-995B-4730-A0A9-39179E832418}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "..\Entity\Entity.csproj", "{534FA500-F151-4CE4-BCB6-01A455094755}"
 EndProject
