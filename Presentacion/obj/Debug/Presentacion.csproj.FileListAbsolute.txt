@@ -1,0 +1,11 @@
+C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\Presentacion.dll
+C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presentacion.dll
+C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\BLL.dll
+C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\Entity.dll
+C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\BLL.pdb
+C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\Entity.pdb
+C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
