@@ -148,7 +148,7 @@ namespace DAL
         {
             return grupoDeEstudiantes.Estudiantes.Contains(estudiante);
         }
-        public bool ExisteGrupoEnGrupo(GrupoDeEstudiantes grupoDeEstudiantes, GrupoDeEstudiantes grupo)
+        public bool ExisteEnGrupo(GrupoDeEstudiantes grupoDeEstudiantes, GrupoDeEstudiantes grupo)
         {
             foreach (var estudiante in grupo.Estudiantes)
             {
@@ -158,6 +158,102 @@ namespace DAL
                 }
             }
             return true;
+        }
+        public GrupoDeEstudiantes EstudiantesComunesEngrupos(GrupoDeEstudiantes grupoDeEstudiantes, GrupoDeEstudiantes grupoDeEstudiantesVerificar)
+        {
+            GrupoDeEstudiantes grupo = CrearGrupoResultante(grupoDeEstudiantes, grupoDeEstudiantesVerificar, "interseccion");
+            foreach (var estudiante in grupoDeEstudiantes.Estudiantes)
+            {
+                if (ExisteEnGrupo(grupoDeEstudiantesVerificar, estudiante))
+                {
+                    grupo.AgregarEstudiante(estudiante);
+                }
+            }
+            if (grupo.Estudiantes.Count == 0)
+            {
+                return null;
+            }
+            return grupo;
+        }
+        public bool idsExistentes(int id)
+        {
+            List<GrupoDeEstudiantes> gruposDeEstudiantes = ConsultarTodos();
+            foreach (var grupo in gruposDeEstudiantes)
+            {
+                if (grupo.Id == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public GrupoDeEstudiantes CrearGrupoResultante(GrupoDeEstudiantes grupoDeEstudiantes, GrupoDeEstudiantes grupoDeEstudiantesVerificar, String opcion)
+        {
+            GrupoDeEstudiantes grupo = new GrupoDeEstudiantes();
+            int nuevoId;
+            Random random = new Random();
+            do
+            {
+                nuevoId = random.Next(1, int.MaxValue);
+            } while (idsExistentes(nuevoId));
+            grupo.Id = nuevoId;
+            grupo.Nombre = grupoDeEstudiantes.Nombre + " ∩ " + grupoDeEstudiantesVerificar.Nombre;
+
+            switch (opcion)
+            {
+                case "union":
+                    grupo.Nombre = grupoDeEstudiantes.Nombre + " ∪ " + grupoDeEstudiantesVerificar.Nombre;
+                    break;
+                case "interseccion":
+                    grupo.Nombre = grupoDeEstudiantes.Nombre + " ∩ " + grupoDeEstudiantesVerificar.Nombre;
+                    break;
+                case "diferencia":
+                    grupo.Nombre = grupoDeEstudiantes.Nombre + " - " + grupoDeEstudiantesVerificar.Nombre;
+                    break;
+                default:
+                    break;
+            }
+            return grupo;
+        }
+        public GrupoDeEstudiantes EstudiantesNoComunesEngrupos(GrupoDeEstudiantes grupoDeEstudiantes, GrupoDeEstudiantes grupoDeEstudiantesVerificar)
+        {
+            GrupoDeEstudiantes grupo= CrearGrupoResultante(grupoDeEstudiantes, grupoDeEstudiantesVerificar, "diferencia");
+            foreach (var estudiante in grupoDeEstudiantes.Estudiantes)
+            {
+                if (!ExisteEnGrupo(grupoDeEstudiantesVerificar, estudiante))
+                {
+                    grupo.AgregarEstudiante(estudiante);
+                }
+            }
+            foreach (var estudiante in grupoDeEstudiantesVerificar.Estudiantes)
+            {
+                if (!ExisteEnGrupo(grupoDeEstudiantes, estudiante))
+                {
+                    grupo.AgregarEstudiante(estudiante);
+                }
+            }
+            if (grupo.Estudiantes.Count == 0)
+            {
+                return null;
+            }
+            return grupo;
+        }
+        public GrupoDeEstudiantes UnionDeGrupos(GrupoDeEstudiantes grupoDeEstudiantes, GrupoDeEstudiantes grupoDeEstudiantesVerificar)
+        {
+            GrupoDeEstudiantes grupo = CrearGrupoResultante(grupoDeEstudiantes, grupoDeEstudiantesVerificar, "union");
+            foreach (var estudiante in grupoDeEstudiantes.Estudiantes)
+            {
+                grupo.AgregarEstudiante(estudiante);
+            }
+            foreach (var estudiante in grupoDeEstudiantesVerificar.Estudiantes)
+            {
+                grupo.AgregarEstudiante(estudiante);
+            }
+            if (grupo.Estudiantes.Count == 0)
+            {
+                return null;
+            }
+            return grupo;
         }
     }
 }

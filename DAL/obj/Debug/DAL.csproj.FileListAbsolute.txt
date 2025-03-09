@@ -7,3 +7,12 @@ C:\Users\santiago\source\repos\ParcialPrimerCorteP3\DAL\obj\Debug\DAL.csproj.Cor
 C:\Users\santiago\source\repos\ParcialPrimerCorteP3\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\santiago\source\repos\ParcialPrimerCorteP3\DAL\obj\Debug\DAL.dll
 C:\Users\santiago\source\repos\ParcialPrimerCorteP3\DAL\obj\Debug\DAL.pdb
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\DAL\bin\Debug\DAL.dll
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\DAL\bin\Debug\DAL.pdb
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\DAL\bin\Debug\Entity.dll
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\DAL\bin\Debug\Entity.pdb
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\DAL\obj\Debug\DAL.dll
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\DAL\obj\Debug\DAL.pdb

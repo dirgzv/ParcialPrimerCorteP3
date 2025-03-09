@@ -9,3 +9,14 @@ C:\Users\santiago\source\repos\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.csproj.Cor
 C:\Users\santiago\source\repos\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\santiago\source\repos\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.dll
 C:\Users\santiago\source\repos\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.pdb
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\bin\Debug\BLL.dll
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\bin\Debug\BLL.pdb
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\bin\Debug\DAL.dll
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\bin\Debug\Entity.dll
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\bin\Debug\DAL.pdb
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\bin\Debug\Entity.pdb
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.dll
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.pdb

@@ -17,7 +17,7 @@ namespace Presentacion
             Console.WriteLine("2. Modificar grupo de estudiantes");
             Console.WriteLine("3. Eliminar grupo de estudiantes");
             Console.WriteLine("4. Listar grupo de estudiantes");
-            Console.WriteLine("5. Operaciones Grupo");
+            Console.WriteLine("5. Operaciones de Grupo");
             Console.WriteLine("6. Volver al menú principal");
             Console.Write("Seleccione una opción: ");
             string opcion = Console.ReadLine();
@@ -121,11 +121,12 @@ namespace Presentacion
             GrupoDeEstudiantes grupoDeEstudiantes= grupoDeEstudianteService.Buscar(int.Parse(idGrupo));
             Console.WriteLine("1. Agregar estudiante");
             Console.WriteLine("2. Eliminar estudiante");
-            Console.WriteLine("3. verificacion de existencia de estudiante en un grupo");
-            Console.WriteLine("4. verificacion de existencia de un grupo de estudiantes en un grupo");
-            Console.WriteLine("5. mostrar Estudiantes comunes de dos grupos");
-            Console.WriteLine("6. mostrar Estudiantes de un grupo que no esten en otro grupo");
-            Console.WriteLine("7. Volver al menú anterior");
+            Console.WriteLine("3. (persistencia) verificacion de existencia de estudiante en un grupo");
+            Console.WriteLine("4. (persistencia) verificacion de existencia de un grupo de estudiantes en un grupo");
+            Console.WriteLine("5. (Union) Union de dos grupos");
+            Console.WriteLine("6. (Intersección) mostrar Estudiantes comunes de dos grupos");
+            Console.WriteLine("7. (Diferencia) mostrar Estudiantes de un grupo que no esten en otro grupo");
+            Console.WriteLine("8. Volver al menú anterior");
             Console.Write("Seleccione una opción: ");
             string opcion = Console.ReadLine();
 
@@ -144,12 +145,15 @@ namespace Presentacion
                     GrupoExisteEnGrupo(grupoDeEstudiantes);
                     break;
                 case "5":
-                    EstudiantesComunesEngrupos(grupoDeEstudiantes);
+                    UnionDeGrupos(grupoDeEstudiantes);
                     break;
                 case "6":
-                    EstudiantesNoComunesEngrupos(grupoDeEstudiantes);
+                    EstudiantesComunesEngrupos(grupoDeEstudiantes);
                     break;
                 case "7":
+                    EstudiantesNoComunesEngrupos(grupoDeEstudiantes);
+                    break;
+                case "8":
                     Console.WriteLine("Volver al menú anterior");
                     break;
                 default:
@@ -195,18 +199,25 @@ namespace Presentacion
         }
         public void EstudiantesComunesEngrupos(GrupoDeEstudiantes grupoDeEstudiantes)
         {
-            //por aqui vamos
             Console.WriteLine("Ingrese el id del segundo grupo:");
             string idGrupo2 = Console.ReadLine();
-            //se manda los id de los grupos a la logicaGrupo para que devuelva los estudiantes comunes
+            GrupoDeEstudiantes estudiantesComunes = grupoDeEstudianteService.EstudiantesComunesEngrupos(grupoDeEstudiantes, int.Parse(idGrupo2));
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }
-        public void EstudiantesNoComunesEngrupos(String idGrupo)
+        public void EstudiantesNoComunesEngrupos(GrupoDeEstudiantes grupoDeEstudiantes)
         {
             Console.WriteLine("Ingrese el id del segundo grupo:");
             string idGrupo2 = Console.ReadLine();
-            //se manda los id de los grupos a la logicaGrupo para que devuelva los estudiantes que no estan en el otro grupo
+            GrupoDeEstudiantes estudiantesNoComunes = grupoDeEstudianteService.EstudiantesNoComunesEngrupos(grupoDeEstudiantes, int.Parse(idGrupo2));
+            Console.WriteLine("Presione una tecla para continuar");
+            Console.ReadKey();
+        }
+        public void UnionDeGrupos(GrupoDeEstudiantes grupoDeEstudiantes)
+        {
+            Console.WriteLine("Ingrese el id del segundo grupo:");
+            string idGrupo2 = Console.ReadLine();
+            GrupoDeEstudiantes grupoUnido = grupoDeEstudianteService.UnionDeGrupos(grupoDeEstudiantes,int.Parse(idGrupo2));
             Console.WriteLine("Presione una tecla para continuar");
             Console.ReadKey();
         }

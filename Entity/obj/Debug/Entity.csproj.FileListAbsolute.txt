@@ -4,3 +4,9 @@ C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Entity\obj\Debug\Entity.cspr
 C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
 C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Entity\obj\Debug\Entity.dll
 C:\Users\santiago\source\repos\ParcialPrimerCorteP3\Entity\obj\Debug\Entity.pdb
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\Entity\bin\Debug\Entity.dll
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\Entity\bin\Debug\Entity.pdb
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\Entity\obj\Debug\Entity.csproj.AssemblyReference.cache
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\Entity\obj\Debug\Entity.dll
+C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\Entity\obj\Debug\Entity.pdb

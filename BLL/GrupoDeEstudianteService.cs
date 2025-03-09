@@ -203,5 +203,56 @@ namespace BLL
             }
             return ($"El grupo con la identificación {grupoDeEstudiantes.Id} no se encuentra en el grupo");
         }
+        public GrupoDeEstudiantes EstudiantesComunesEngrupos(GrupoDeEstudiantes grupoDeEstudiantes, int id)
+        {
+            if (grupoDeEstudiantes == null)
+            {
+                throw new ArgumentNullException(nameof(grupoDeEstudiantes), "El grupo de estudiantes no puede ser nulo.");
+            }
+            if (id <= 0)
+            {
+                throw new ArgumentException("El ID debe ser mayor que cero.", nameof(id));
+            }
+            GrupoDeEstudiantes grupoDeEstudiantesVerificar = grupoDeEstudianteRepository.Buscar(id);
+            if (grupoDeEstudiantesVerificar == null)
+            {
+                throw new InvalidOperationException($"No se encontró un grupo de estudiantes con el ID {id}.");
+            }
+            return grupoDeEstudianteRepository.EstudiantesComunesEngrupos(grupoDeEstudiantes, grupoDeEstudiantesVerificar);
+        }
+        public GrupoDeEstudiantes EstudiantesNoComunesEngrupos(GrupoDeEstudiantes grupoDeEstudiantes, int id)
+        {
+            if (grupoDeEstudiantes == null)
+            {
+                throw new ArgumentNullException(nameof(grupoDeEstudiantes), "El grupo de estudiantes no puede ser nulo.");
+            }
+            if (id <= 0)
+            {
+                throw new ArgumentException("El ID debe ser mayor que cero.", nameof(id));
+            }
+            GrupoDeEstudiantes grupoDeEstudiantesVerificar = grupoDeEstudianteRepository.Buscar(id);
+            if (grupoDeEstudiantesVerificar == null)
+            {
+                throw new InvalidOperationException($"No se encontró un grupo de estudiantes con el ID {id}.");
+            }
+            return grupoDeEstudianteRepository.EstudiantesNoComunesEngrupos(grupoDeEstudiantes, grupoDeEstudiantesVerificar);
+        }
+        public GrupoDeEstudiantes UnionDeGrupos(GrupoDeEstudiantes grupoDeEstudiantes, int id)
+        {
+            if (grupoDeEstudiantes == null)
+            {
+                throw new ArgumentNullException(nameof(grupoDeEstudiantes), "El grupo de estudiantes no puede ser nulo.");
+            }
+            if (id <= 0)
+            {
+                throw new ArgumentException("El ID debe ser mayor que cero.", nameof(id));
+            }
+            GrupoDeEstudiantes grupoDeEstudiantesVerificar = grupoDeEstudianteRepository.Buscar(id);
+            if (grupoDeEstudiantesVerificar == null)
+            {
+                throw new InvalidOperationException($"No se encontró un grupo de estudiantes con el ID {id}.");
+            }
+            return grupoDeEstudianteRepository.UnionDeGrupos(grupoDeEstudiantes, grupoDeEstudiantesVerificar);
+        }
     }
 }
