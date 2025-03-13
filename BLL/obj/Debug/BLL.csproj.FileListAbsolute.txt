@@ -20,3 +20,14 @@ C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.csp
 C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.dll
 C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.pdb
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\BLL\bin\Debug\BLL.dll
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\BLL\bin\Debug\BLL.pdb
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\BLL\bin\Debug\DAL.dll
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\BLL\bin\Debug\Entity.dll
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\BLL\bin\Debug\DAL.pdb
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\BLL\bin\Debug\Entity.pdb
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.dll
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\BLL\obj\Debug\BLL.pdb

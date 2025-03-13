@@ -1,7 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\santiago\\source\\repos\\dirgzv\\ParcialPrimerCorteP3\\Presentacion\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\Presentacion\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2BE7BFB5-2B07-4268-A17D-8EA42590DA46}|Presentacion.csproj|C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\Presentacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BE7BFB5-2B07-4268-A17D-8EA42590DA46}|Presentacion.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{849B4542-995B-4730-A0A9-39179E832418}|..\\DAL\\DAL.csproj|c:\\users\\natyc\\source\\repos\\parcialprimercortep3\\dal\\estudianterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53B46EDF-4EC0-45CB-94BB-7267EC430D4C}|..\\BLL\\BLL.csproj|c:\\users\\natyc\\source\\repos\\parcialprimercortep3\\bll\\estudianteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BE7BFB5-2B07-4268-A17D-8EA42590DA46}|Presentacion.csproj|c:\\users\\natyc\\source\\repos\\parcialprimercortep3\\presentacion\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BE7BFB5-2B07-4268-A17D-8EA42590DA46}|Presentacion.csproj|solutionrelative:menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BE7BFB5-2B07-4268-A17D-8EA42590DA46}|Presentacion.csproj|c:\\users\\natyc\\source\\repos\\parcialprimercortep3\\presentacion\\menuestudiantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BE7BFB5-2B07-4268-A17D-8EA42590DA46}|Presentacion.csproj|solutionrelative:menuestudiantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BE7BFB5-2B07-4268-A17D-8EA42590DA46}|Presentacion.csproj|c:\\users\\natyc\\source\\repos\\parcialprimercortep3\\presentacion\\menugrupodeestudiantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BE7BFB5-2B07-4268-A17D-8EA42590DA46}|Presentacion.csproj|solutionrelative:menugrupodeestudiantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +32,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +41,88 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EstudianteService.cs",
+              "DocumentMoniker": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\BLL\\EstudianteService.cs",
+              "RelativeDocumentMoniker": "..\\BLL\\EstudianteService.cs",
+              "ToolTip": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\BLL\\EstudianteService.cs",
+              "RelativeToolTip": "..\\BLL\\EstudianteService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T23:28:34.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MenuEstudiantes.cs",
+              "DocumentMoniker": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\Presentacion\\MenuEstudiantes.cs",
+              "RelativeDocumentMoniker": "MenuEstudiantes.cs",
+              "ToolTip": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\Presentacion\\MenuEstudiantes.cs",
+              "RelativeToolTip": "MenuEstudiantes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T23:21:39.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MenuGrupoDeEstudiantes.cs",
+              "DocumentMoniker": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\Presentacion\\MenuGrupoDeEstudiantes.cs",
+              "RelativeDocumentMoniker": "MenuGrupoDeEstudiantes.cs",
+              "ToolTip": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\Presentacion\\MenuGrupoDeEstudiantes.cs",
+              "RelativeToolTip": "MenuGrupoDeEstudiantes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T23:21:35.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MenuPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\Presentacion\\MenuPrincipal.cs",
+              "RelativeDocumentMoniker": "MenuPrincipal.cs",
+              "ToolTip": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\Presentacion\\MenuPrincipal.cs",
+              "RelativeToolTip": "MenuPrincipal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T23:21:31.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EstudianteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\DAL\\EstudianteRepository.cs",
+              "RelativeDocumentMoniker": "..\\DAL\\EstudianteRepository.cs",
+              "ToolTip": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\DAL\\EstudianteRepository.cs",
+              "RelativeToolTip": "..\\DAL\\EstudianteRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T22:11:33.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\Presentacion\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\natyc\\source\\repos\\ParcialPrimerCorteP3\\Presentacion\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T22:09:01.655Z",
+              "EditorCaption": ""
             }
           ]
         }

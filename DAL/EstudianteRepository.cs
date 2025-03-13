@@ -11,14 +11,19 @@ namespace DAL
     public class EstudianteRepository
     {
         private readonly String FileName = "Estudiante.txt";
-        public EstudianteRepository() { }
+        public EstudianteRepository() 
+        {
+            
+        }
         public void Guardar(Estudiante estudiante)
         {
-            using (var file = new StreamWriter(FileName, true))
-            {
-                file.WriteLine($"{estudiante.Id};{estudiante.Nombre};{estudiante.Edad};{estudiante.Sexo};{estudiante.Promedio}");
-            }
-        }
+            FileStream file = new FileStream(FileName, FileMode.Append);
+            StreamWriter writer = new StreamWriter(file);
+            writer.WriteLine($"{estudiante.Id};{estudiante.Nombre};{estudiante.Edad};{estudiante.Sexo};{estudiante.Promedio}");
+            writer.Close();
+            file.Close();
+
+        } 
         public Estudiante Buscar(int id)
         {
             List<Estudiante> estudiantes = ConsultarTodos();
@@ -38,15 +43,17 @@ namespace DAL
         public List<Estudiante> ConsultarTodos()
         {
             List<Estudiante> estudiantes = new List<Estudiante>();
-            string Linea = string.Empty;
-            using (var Reader = new StreamReader(FileName))
+            FileStream file = new FileStream(FileName, FileMode.OpenOrCreate, FileAccess.Read);
+            StreamReader reader = new StreamReader(file);
+            string linea = string.Empty;
+            while ((linea = reader.ReadLine()) != null)
             {
-                while ((Linea = Reader.ReadLine()) != null)
-                {
-                    Estudiante estudiante = MapearEstudiante(Linea);
-                    estudiantes.Add(estudiante);
-                }
+
+                Estudiante estudiante = MapearEstudiante(linea);
+                estudiantes.Add(estudiante);
             }
+            reader.Close();
+            file.Close();
             return estudiantes;
         }
         public Estudiante MapearEstudiante(string Linea)
@@ -77,20 +84,22 @@ namespace DAL
         public void Modificar(Estudiante estudianteNuevo)
         {
             List<Estudiante> estudiantes = ConsultarTodos();
-            using (var Writer = new StreamWriter(FileName))
+            FileStream file = new FileStream(FileName, FileMode.Create);
+            StreamWriter writer = new StreamWriter(file);
+            file.Close();
+            foreach (var item in estudiantes)
             {
-                foreach (var item in estudiantes)
+                if (EsEncontrado(item, estudianteNuevo.Id))
                 {
-                    if (EsEncontrado(item, estudianteNuevo.Id))
-                    {
-                        Writer.WriteLine($"{estudianteNuevo.Id};{estudianteNuevo.Nombre};{estudianteNuevo.Edad};{estudianteNuevo.Sexo};{estudianteNuevo.Promedio}");
-                    }
-                    else
-                    {
-                        Writer.WriteLine($"{item.Id};{item.Nombre};{item.Edad};{item.Sexo};{item.Promedio}");
-                    }
+                    writer.WriteLine($"{estudianteNuevo.Id};{estudianteNuevo.Nombre};{estudianteNuevo.Edad};{estudianteNuevo.Sexo};{estudianteNuevo.Promedio}");
                 }
+                else
+                {
+                    writer.WriteLine($"{item.Id};{item.Nombre};{item.Edad};{item.Sexo};{item.Promedio}");
+                }
+
             }
+            
         }
     }
 }

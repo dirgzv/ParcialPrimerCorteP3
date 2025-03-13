@@ -22,3 +22,16 @@ C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\Presentacion\obj\Debu
 C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presentacion.pdb
 C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\Presentacion\bin\Debug\Presentacion.exe
 C:\Users\santiago\source\repos\dirgzv\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\BLL.dll
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\Entity.dll
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\DAL.dll
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\BLL.pdb
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\Entity.pdb
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\bin\Debug\DAL.pdb
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\natyc\Source\Repos\ParcialPrimerCorteP3\Presentacion\obj\Debug\Presentacion.pdb
